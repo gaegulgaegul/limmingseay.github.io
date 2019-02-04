@@ -13,7 +13,7 @@ github_username: linmingseay
 facebook_username: 100006466843580
 linkedin_public_url: 
 disqus_username: 
-profile_picture: "/src/img/blog-author.jpg"
+profile_picture: https://avatars2.githubusercontent.com/u/43808137?s=460&v=4
 
 # Build settings
 markdown: kramdown
