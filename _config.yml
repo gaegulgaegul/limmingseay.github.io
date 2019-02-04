@@ -9,8 +9,8 @@ username: Lim Myeong Seop
 user_title: 그냥 한번 해보는 Github Blog
 email: dla9721@gmail.com
 twitter_username: 
-github_username:  linmingseay
-gplus_username:  
+github_username: linmingseay
+facebook_username: profile.php?id=100006466843580
 linkedin_public_url: 
 disqus_username: 
 profile_picture: https://linmingseay.github.io/src/img/blog-author.jpg
@@ -50,9 +50,9 @@ links:
       url: http://www.github.com/linmingseay
       new_tab: true
       key_trigger: g
-    - title: twitter
-      url: http://www.twitter.com/
-      key_trigger: t
+    - title: facebook
+      url: http://www.facebook.com/profile.php?id=100006466843580
+      key_trigger: f
     - title: search
       url: ""
       key_trigger: s #WARNING: search only works with "s"
