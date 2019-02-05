@@ -11,13 +11,15 @@ categories:
 - AWS
 ---
 
-## AWS SSH 접속
+
 
 ### Mac Terminal에서 AWS EC2 ssh 접속
 - *.pem 파일(Key Pair)을 확인하여 접근한다.
 
 1. .pem 파일 저장소로 이동
-- <code># cd ~/.ssh</code>
+{% highlight javascript %}
+# cd ~/.ssh
+{% endhighlight %}
 
 2. config 수정
 - <code># vi ./config</code>
