@@ -14,8 +14,6 @@ categories:
 <br/>
 <br/>
 
-## 오라클 특수문자
-
 ## ASCII, CHR
 {% highlight javascript %}
     SELECT ASCII('&') FROM DUAL;
