@@ -18,7 +18,7 @@ categories:
 ## Mac Terminal에서 AWS EC2 ssh 접속
 - *.pem 파일(Key Pair)을 확인하여 접근한다.
 
-1. *.pem 파일 저장소로 이동
+<p>1. *.pem 파일 저장소로 이동</p>
 {% highlight javascript %}
 # cd ~/.ssh
 {% endhighlight %}
@@ -33,12 +33,12 @@ Host [접근 호스트명]
     IdentityFile [Key Pair Location]
 {% endhighlight %}
 
-3. config 권한 설정
+<p>3. config 권한 설정</p>
 {% highlight javascript %}
 # chmod 440 ./config
 {% endhighlight %}
 
-4. ssh 접속
+<p>4. ssh 접속</p>
 {% highlight javascript %}
 # ssh [접근 호스트명]
 {% endhighlight %}
@@ -47,19 +47,19 @@ Host [접근 호스트명]
 ## AWS 접근 기본 계정 설정
 - root 계정에서 설정
 
-1. 현재 기본 계정에서 'authorized_keys' 설정할 계정으로 복사
+<p>1. 현재 기본 계정에서 'authorized_keys' 설정할 계정으로 복사</p>
 {% highlight javascript %}
 # cp ~/.ssh/authorized_keys [설정할 계정 home]/.ssh/authorized_keys
 {% endhighlight %}
 
-2. 'authorized_keys' 소유자 및 그룹 권한 설정
+<p>2. 'authorized_keys' 소유자 및 그룹 권한 설정</p>
 {% highlight javascript %}
 # cd /home/[설정할 계정 home]/.ssh
 # chown [설정할 계정명] authorized_keys
 # chgrp [설정할 그룹명] authorized_keys
 {% endhighlight %}
 
-3. Mac에서 ssh 접속
+<p>3. Mac에서 ssh 접속</p>
 {% highlight javascript %}
 # ssh [접근 호스트명]
 {% endhighlight %}
