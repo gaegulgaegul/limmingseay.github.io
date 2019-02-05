@@ -37,7 +37,8 @@ categories:
 - 하나의 Step 안에 Tasklet 혹은 Reader & Processor & Writer 묶음이 존재
 
 <figure class="foto-legenda">
-	<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/ajudando-carregar.jpg"}}" alt="">
-	<figcaption> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat architecto minus sed dolorum debitis iste quae harum, fuga commodi libero voluptatum voluptates nemo, assumenda itaque. Placeat neque voluptatem, veritatis quae.</p>
+	<img src="{{ '/assets/img/spring-boot-batch/guide.png'}}" alt="">
+	<figcaption>
+        <p></p>
 	</figcaption>
 </figure>
