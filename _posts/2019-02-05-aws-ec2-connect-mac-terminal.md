@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "AWS EC2 Connect Mac Terminal"
+image: ''
+date:   2019-02-05 14:23:00
+tags:
+- TIL
+- AWS
+description: 'test'
+categories:
+- AWS
+---
+
+## AWS SSH 접속
+
+### Mac Terminal에서 AWS EC2 ssh 접속
+- *.pem 파일(Key Pair)을 확인하여 접근한다.
+
+1. .pem 파일 저장소로 이동
+- <code># cd ~/.ssh</code>
+
+2. config 수정
+- <code># vi ./config</code>
+<pre><code>
+Host [접근 호스트명]
+    HostName [퍼블릭 DNS(IPv4)]
+    User oracle
+    IdentityFile [Key Pair Location]
+</code></pre>
+
+3. config 권한 설정
+- <code># chmod 440 ./config</code>
+
+4. ssh 접속
+- <code># ssh [접근 호스트명]</code>
+
+
+### AWS 접근 기본 계정 설정
+- root 계정에서 설정
+
+1. 현재 기본 계정에서 'authorized_keys' 설정할 계정으로 복사
+- <code># cp ~/.ssh/authorized_keys [설정할 계정 home]/.ssh/authorized_keys</code>
+
+2. 'authorized_keys' 소유자 및 그룹 권한 설정
+- <code># cd /home/[설정할 계정 home]/.ssh</code>
+- <code># chown [설정할 계정명] authorized_keys</code>
+- <code># chgrp [설정할 그룹명] authorized_keys</code>
+
+3. Mac에서 ssh 접속
+- <code># ssh [접근 호스트명]</code>
+
+
+
