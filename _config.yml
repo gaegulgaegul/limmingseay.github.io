@@ -5,7 +5,7 @@ url: "https://linmingseay.github.io"
 baseurl: ""
 
 # User settings
-username: Lim Myeong Seop
+username: LinMingSeay's Develop log
 user_title: 그냥 한번 해보는 Github Blog
 email: dla9721@gmail.com
 twitter_username: 
@@ -42,7 +42,7 @@ links:
     - title: 태그
       url: /tags
       key_trigger: 4
-    - title: about me
+    - title: About
       url: /about
       key_trigger: 5
   section_2:
