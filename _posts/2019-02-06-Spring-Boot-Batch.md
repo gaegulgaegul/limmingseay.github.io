@@ -36,4 +36,9 @@ categories:
 - Job이라는 하나의 큰 일감에 여러 단계(Step)를 두고, 각 단계를 배치의 기본 흐름대로 구현
 - 하나의 Step 안에 Tasklet 혹은 Reader & Processor & Writer 묶음이 존재
 
-<img src="{{ "/assets/img/spring-boot-batch/guide.png"}}" alt="">
+<figure class="foto-legenda">
+	<img src="{{ "/assets/img/spring-boot-batch/guide.png"}}" alt="">
+	<figcaption>
+        <p></p>
+	</figcaption>
+</figure>
