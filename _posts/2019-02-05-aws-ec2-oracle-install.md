@@ -74,7 +74,7 @@ net.core.wmem_max = 1048576
 {% endhighlight %}
 
 - 자원 제한 설정
-- <code># vi /etc/security/limits.conf 입력 후, 파일 제일 아래 쪽에 입력</code>
+- <p># vi /etc/security/limits.conf 입력 후, 파일 제일 아래 쪽에 입력</p>
 {% highlight javascript %}
 oracle          soft    nproc   2047
 oracle          hard    nproc   16384
@@ -84,11 +84,11 @@ oracle          soft    stack   10240
 {% endhighlight %}
 
 - 적용을 위해 reboot
-- <code># /sbin/sysctl -p 명령어로 설정 확인</code>
+- <p># /sbin/sysctl -p 명령어로 설정 확인</p>
 
 <p>5. 오라클 환경변수 설정</p>
-- <code># cd /home/oracle 이동</code>
-- <code># vi .bash_profile</code>
+- <p># cd /home/oracle 이동</p>
+- <p># vi .bash_profile</p>
 {% highlight javascript %}
 -- 주석 처리
 #PATH=$PATH:$HOME/.local/bin:$HOME/bin
@@ -103,11 +103,11 @@ export ORACLE_HOME=$ORACLE_BASE/product/11.2.0/xe
 export ORACLE_LISTNER=$ORACLE_HOME/bin/lsnrctl
 export PATH=$ORACLE_HOME/bin:$PATH
 {% endhighlight %}
-- <code># source .bash_profile</code> 입력
+- <p># source .bash_profile</p> 입력
 
 6. 오라클 설치
-- <code># unzip [오라클 zip 파일명]</code>
-- <code># rpm -Uvh ./Disk1/[오라클 rpm 설치 파일명]</code>
+- <p># unzip [오라클 zip 파일명]</p>
+- <p># rpm -Uvh ./Disk1/[오라클 rpm 설치 파일명]</p>
 {% highlight javascript %}
 -- 에러 발생시 조치방안 --
 *case1 : error:open of .........rpm failed : NoSuch file or derectory
@@ -123,12 +123,12 @@ export PATH=$ORACLE_HOME/bin:$PATH
 # mkswap swapfile
 # swapon swapfile
 {% endhighlight %}
-- <code># /etc/init.d/oracle-xe configure 입력</code>
+- <p># /etc/init.d/oracle-xe configure 입력</p>
 - http:8080, oracle:1521, password 설정
 
 7. 오라클 세부 환경 설정
-- <code># cd /u01/app/oracle/product/11.2.0/xe/network/admin</code>
-- <code># vi listener.ora</code>
+- <p># cd /u01/app/oracle/product/11.2.0/xe/network/admin</p>
+- <p># vi listener.ora</p>
 {% highlight javascript %}
 SID_LIST_LISTENER =
   (SID_LIST =
@@ -153,7 +153,7 @@ LISTENER =
   )
 {% endhighlight %}
 
-- <code># vi tnsnames.ora</code>
+- <p># vi tnsnames.ora</p>
 {% highlight javascript %}XE =
   (DESCRIPTION =
     (ADDRESS = (PROTOCOL = TCP)(HOST = ip-172-31-17-216)(PORT = 1521))
@@ -176,6 +176,6 @@ EXTPROC_CONNECTION_DATA =
   {% endhighlight %}
 
   8. 오라클 서비스 실행
-- <code># su oracle</code>
-- <code>$ source .bash_profile</code>
-- <code>$ sqlplus / as sysdba</code>
+- <p># su oracle</p>
+- <p>$ source .bash_profile</p>
+- <p>$ sqlplus / as sysdba</p>
