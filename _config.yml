@@ -30,16 +30,16 @@ compress_html:
 # Links to include in menu navigation
 links:
   section_1:
-    - title: home
+    - title: 홈
       url: /
       key_trigger: 1
-    - title: my posts
+    - title: 전체 포스트
       url: /posts
       key_trigger: 2
-    - title: series
+    - title: 시리즈
       url: /series
       key_trigger: 3
-    - title: tags
+    - title: 태그
       url: /tags
       key_trigger: 4
     - title: about me
