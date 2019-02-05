@@ -46,14 +46,14 @@ links:
       url: /about
       key_trigger: 5
   section_2:
-    - title: github
+    - title: GitHub
       url: http://www.github.com/linmingseay
       new_tab: true
       key_trigger: g
-    - title: facebook
+    - title: FACEBOOK
       url: http://www.facebook.com/profile.php?id=100006466843580
       key_trigger: f
-    - title: search
+    - title: 검색
       url: ""
       key_trigger: s #WARNING: search only works with "s"
 
