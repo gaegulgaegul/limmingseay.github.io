@@ -13,7 +13,9 @@ categories:
 
 
 
-### Mac Terminal에서 AWS EC2 ssh 접속
+
+
+## Mac Terminal에서 AWS EC2 ssh 접속
 - *.pem 파일(Key Pair)을 확인하여 접근한다.
 
 1. .pem 파일 저장소로 이동
@@ -22,21 +24,24 @@ categories:
 {% endhighlight %}
 
 2. config 수정
-- <code># vi ./config</code>
 {% highlight javascript %}
+# vi ./config
 
 Host [접근 호스트명]
     HostName [퍼블릭 DNS(IPv4)]
     User oracle
     IdentityFile [Key Pair Location]
-    
 {% endhighlight %}
 
 3. config 권한 설정
-- <code># chmod 440 ./config</code>
+{% highlight javascript %}
+# chmod 440 ./config
+{% endhighlight %}
 
 4. ssh 접속
-- <code># ssh [접근 호스트명]</code>
+{% highlight javascript %}
+# ssh [접근 호스트명]
+{% endhighlight %}
 
 
 ### AWS 접근 기본 계정 설정
