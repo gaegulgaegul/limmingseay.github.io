@@ -23,12 +23,14 @@ categories:
 
 2. config 수정
 - <code># vi ./config</code>
-<pre><code>
+{% highlight javascript %}
+
 Host [접근 호스트명]
     HostName [퍼블릭 DNS(IPv4)]
     User oracle
     IdentityFile [Key Pair Location]
-</code></pre>
+    
+{% endhighlight %}
 
 3. config 권한 설정
 - <code># chmod 440 ./config</code>
