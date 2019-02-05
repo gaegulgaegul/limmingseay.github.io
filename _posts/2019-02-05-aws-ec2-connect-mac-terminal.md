@@ -6,7 +6,7 @@ date:   2019-02-05 14:23:00
 tags:
 - TIL
 - AWS
-description: 'test'
+description: ''
 categories:
 - AWS
 ---
