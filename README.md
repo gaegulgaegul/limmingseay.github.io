@@ -2,117 +2,16 @@
 > linmingseay's Blog
 
 # 기능 추가
-- TIL Repository의 내용 포스트(TIL 통합 관리)
-- post 할 때 나만의 가이드라인 잡기
+- ~~TIL Repository의 내용 포스트(TIL 통합 관리)~~
+- ~~post 할 때 나만의 가이드라인 잡기~~
 - 꼭 개발적인 내용이 아니여도 블로그 내용 이것저것 적어보기
 - 대표 이미지 설정하기(생각보다 제일 어려움.......)
-- README의 내용은 아직 익숙하지 않으니 남겨두기
+- ~~README의 내용은 아직 익숙하지 않으니 남겨두기~~
+
+# 참고
+<a href="https://steemit.com/kr/@nand/markdown">마크다운 총문법</a>
 
 ------------------------------------------------------
-
-# Space Jekyll
-
-A simple and elegant Jekyll theme based on Spacemacs. The theme works well on mobile devices as well.
-
-See a live demo [here](https://victorvoid.github.io/space-jekyll-template/).
-
-![](https://github.com/victorvoid/space-jekyll-template/blob/master/screenshot.png?raw=true)
-
-# Site/User Settings
-
-customize your site in ``_config.yml``
-
-```ruby
-
-# Site settings
-description: A blog about lorem ipsum
-baseurl: "" # the subpath
-url: "" # the base hostname &/|| protocol for your site
-
-# User settings
-username: Lorem Ipsum
-user_description: Lorem Developer
-user_title: Lorem Ipsum
-email: lorem@ipsum.com
-twitter_username: loremipsum
-github_username:  loremipsum
-gplus_username:  loremipsum
-disqus_username: loremipsum
-
-```
-
-See more about project and links in [_config.yml](./_config.yml)
-
-## How to create a post ?
-
-_posts create a file .md with structure:
-
-```md
----
-layout: post
-title: "Lorem ipsum speak.."
-date: 2016-09-13 01:00:00
-image: '/assets/img/post-image.png'
-description: 'about tech'
-tags:
-- lorem
-- tech
-categories:
-- Lorem ipsum
-twitter_text: 'How to speak with Lorem'
----
-```
-
-## How to insert new links on menu navigation ?
-
-![](https://github.com/victorvoid/space-jekyll-template/blob/master/src/img/menu.png)
-
-You should open `_config.yml` and change/add `links` section:
-
-```yaml
-links:
-  section_1: # you can use any name
-    - title: home # show on menu
-      url: / #link
-      key_trigger: 1 # link shortcut and show on the left of the title
-    - title: my posts
-      url: /posts
-      key_trigger: 2
-    - title: series
-      url: /series
-      key_trigger: 3
-    - title: tags
-      url: /tags
-      key_trigger: 4
-    - title: about me
-      url: /about
-      key_trigger: 5
-```
-
-Frontend Technologies
----------------------
-* [Gulp](https://gulpjs.com/): The streaming build system.
-* [Stylus](http://stylus-lang.com/): expressive, dynamic, robust CSS.
-* [BrowserSync](https://www.browsersync.io/): Time-saving synchronised browser testing.
-* [Rupture](https://github.com/jescalan/rupture): Simple media queries for stylus.
-* [Kouto-Swiss](http://kouto-swiss.io/): A complete CSS framework for Stylus.
-* [Jeet](http://jeet.gs/): A grid system for human.
-* [Zepto.js](http://zeptojs.com/): The aerogel-weight jQuery-compatible JavaScript library.
-
-## How can I modify the theme ?
-
-First, install [jekyll](https://jekyllrb.com/) and [node.js](https://nodejs.org/).
-
-1. Fork the theme with your username, example: `charlie.github.io`
-2. Clone repository to your computer
-3. run `npm install`
-4. run `gulp`
-5. Be happy by modifying the files
-
-**Space Jekyll** uses the [Stylus](http://stylus-lang.com/) to process his css, then modifies the style of the theme in [this folder](https://github.com/victorvoid/space-jekyll-template/tree/master/src/styl).
-
-You can go in the [variable.styl](https://github.com/victorvoid/space-jekyll-template/blob/master/src/styl/_variables.styl) and modify the colors. 
-
 
 ## License
 The MIT License (MIT)
