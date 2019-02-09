@@ -14,8 +14,6 @@ categories:
 <br/>
 <br/>
 
-## mybatis setting
-
 ## Map으로 받은 결과값의 순서가 유지가 되지 않은 경우
 - resultType을 Map -> LinkedHashMap으로 변경한다.
 {% highlight javascript %}

@@ -14,9 +14,6 @@ categories:
 <br/>
 <br/>
 
-
-## java System
-
 {% highlight javascript %}
     System.exit(0);  -> 정상종료
     System.exit(1);  -> 비정상종료
