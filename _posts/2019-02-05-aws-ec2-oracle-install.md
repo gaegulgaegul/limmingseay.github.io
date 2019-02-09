@@ -105,7 +105,7 @@ export PATH=$ORACLE_HOME/bin:$PATH
 {% endhighlight %}
 - <p># source .bash_profile</p> 입력
 
-6. 오라클 설치
+<p>6. 오라클 설치</p>
 - <p># unzip [오라클 zip 파일명]</p>
 - <p># rpm -Uvh ./Disk1/[오라클 rpm 설치 파일명]</p>
 {% highlight javascript %}
@@ -126,7 +126,7 @@ export PATH=$ORACLE_HOME/bin:$PATH
 - <p># /etc/init.d/oracle-xe configure 입력</p>
 - http:8080, oracle:1521, password 설정
 
-7. 오라클 세부 환경 설정
+<p>7. 오라클 세부 환경 설정</p>
 - <p># cd /u01/app/oracle/product/11.2.0/xe/network/admin</p>
 - <p># vi listener.ora</p>
 {% highlight javascript %}
@@ -175,7 +175,7 @@ EXTPROC_CONNECTION_DATA =
   )
   {% endhighlight %}
 
-  8. 오라클 서비스 실행
+<p>8. 오라클 서비스 실행</p>
 - <p># su oracle</p>
 - <p>$ source .bash_profile</p>
 - <p>$ sqlplus / as sysdba</p>
