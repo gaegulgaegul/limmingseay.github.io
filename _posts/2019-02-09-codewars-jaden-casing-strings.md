@@ -33,8 +33,8 @@ Note that the Java version expects a return value of null for an empty string or
 ## My Solution
 {% highlight javascript %}
 public class JadenCase {
-
-	public String toJadenCase(String phrase) {
+  
+  public String toJadenCase(String phrase) {
     if("".equals(phrase) || null == phrase) {
       return null;
     }
@@ -46,11 +46,8 @@ public class JadenCase {
       returnStr += str.substring(0,1).toUpperCase() + str.substring(1) + " ";
     }
 		
-		return returnStr.trim();
+    return returnStr.trim();
 	}
-
-}
-  }
 
 }
 {% endhighlight %}
