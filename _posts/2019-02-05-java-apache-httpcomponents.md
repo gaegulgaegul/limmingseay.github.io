@@ -87,4 +87,4 @@ categories:
 {% endhighlight %}
 
 ## 참고
-Apache HTTP 컴포넌트 : <https://m.blog.naver.com/PostView.nhn?blogId=javaking75&logNo=220341248215&categoryNo=7&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F/>
+<a href="https://m.blog.naver.com/PostView.nhn?blogId=javaking75&logNo=220341248215&categoryNo=7&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F">Apache HTTP 컴포넌트</a>
