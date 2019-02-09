@@ -1,17 +1,15 @@
 # linmingseay.github.io
 > linmingseay's Blog
 
-# 기능 추가
+## 기능 추가
 - ~~TIL Repository의 내용 포스트(TIL 통합 관리)~~
 - ~~post 할 때 나만의 가이드라인 잡기~~
 - 꼭 개발적인 내용이 아니여도 블로그 내용 이것저것 적어보기
 - 대표 이미지 설정하기(생각보다 제일 어려움.......)
 - ~~README의 내용은 아직 익숙하지 않으니 남겨두기~~
 
-# 참고
+## 참고
 <a href="https://steemit.com/kr/@nand/markdown">마크다운 총문법</a>
-
-------------------------------------------------------
 
 ## License
 The MIT License (MIT)
