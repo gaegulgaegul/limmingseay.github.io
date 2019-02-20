@@ -96,7 +96,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class AreSameTest {
-  
+
   @Test
   public void test1() {
     int[] a = new int[]{121, 144, 19, 161, 19, 144, 19, 11};
@@ -159,6 +159,5 @@ public class AreSame {
 {% endhighlight %}
 
 ## 느낀점
-이번 문제는 보기에 간단해보였지만 막상 문제를 풀어보려하니 생각해줘야할 것이 많았던 것 같았고<br/>
-결국 내 힘으로 풀지 못하고 구글신의 도움을 받았다............<br/>
+이번 문제는 보기에 간단해보였지만 막상 문제를 풀어보려하니 생각해줘야할 것이 많았던 것 같았고 결국 내 힘으로 풀지 못하고 구글신의 도움을 받았다............<br/>
 java8에서 사용하는 람다식에 대해 자세히 볼 필요가 있다고 느껴진다.<br/>
