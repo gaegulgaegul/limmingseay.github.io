@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The highest profit wins!"
+title:  "Printer Errors"
 image: ''
 date:   2019-03-04 23:11:00
 tags:
