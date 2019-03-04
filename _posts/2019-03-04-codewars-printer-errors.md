@@ -27,7 +27,7 @@ You have to write a function printer_error which given a string will output the 
 
 The string has a length greater or equal to one and contains only letters from <code>a</code> to <code>z</code>.<br/>
 
-<pre>#Examples:</pre>
+Examples:
 
 {% highlight javascript %}
 s="aaabbbbhaijjjm"
