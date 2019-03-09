@@ -17,173 +17,210 @@ categories:
 {% endhighlight %}
 
 ## 문제 설명
-This kata is to practice simple string output. Jamie is a programmer, and James' girlfriend. She likes diamonds, and wants a diamond string from James. Since James doesn't know how to make this happen, he needs your help.<br/>
+Your job is to create a calculator which evaluates expressions in Reverse Polish notation.<br/>
 
-Task:<br/>
+For example expression 5 1 2 + 4 * + 3 - (which is equivalent to 5 + ((1 + 2) * 4) - 3 in normal notation) should evaluate to 14.<br/>
 
-You need to return a string that displays a diamond shape on the screen using asterisk ("*") characters. Please see provided test cases for exact output format.<br/>
+For your convenience, the input is formatted such that a space is provided between every token.<br/>
 
-The shape that will be returned from print method resembles a diamond, where the number provided as input represents the number of *’s printed on the middle line. The line above and below will be centered and will have 2 less *’s than the middle line. This reduction by 2 *’s for each line continues until a line with a single * is printed at the top and bottom of the figure.<br/>
+Empty expression should evaluate to 0.<br/>
 
-Return null if input is even number or negative (as it is not possible to print diamond with even number or negative number).<br/>
+Valid operations are +, -, *, /.<br/>
 
-Please see provided test case(s) for examples.<br/>
-
-Python Note<br/>
-Since print is a reserved word in Python, Python students must implement the diamond(n) method instead, and return None for invalid input.<br/>
-
-JS Note<br/>
-JS students, like Python ones, must implement the diamond(n) method, and return null for invalid input.<br/>
+You may assume that there won't be exceptional situations (like stack underflow or division by zero).<br/>
 
 ## My Solution
 {% highlight javascript %}
-class Diamond {
-  public static String print(int n) {
-    if(n<=0 || n%2==0) return null;
+import java.util.List;
+import java.util.ArrayList;
+
+public class Calc {
+
+  public double evaluate(String expr) {
+    if(expr.length() == 0) return 0;
+    if(expr.indexOf("+") <= 0 &&
+       expr.indexOf("-") <= 0 &&
+       expr.indexOf("*") <= 0 &&
+       expr.indexOf("/") <= 0)
+       return Double.parseDouble(expr);
     
-    String diamond = "";
+    String[] arr = expr.split("\\s");
+    double num1, num2;
+    List<Double> list = new ArrayList<>();
     
-    for(int i=0; i<n; i++) {
-      for(int j=0; j<n; j++) {
+    for(int i=0; i<arr.length; i++) {
+      if("+".equals(arr[i]) || "-".equals(arr[i]) || "*".equals(arr[i]) || "/".equals(arr[i])) {
+        num1 = list.get(list.size()-1);
+        list.remove(list.size()-1);
         
-        if(i <= n/2) { // forward
-          
-          if(i+j <= n/2-1) { // left forward
-            diamond += " ";
-          } else if(j-i >= n/2+1) { // right forward
-            break;
-          }else {
-            diamond += "*";
-          }
-          
-        } else if(i > n/2) { // back
+        num2 = list.get(list.size()-1);
+        list.remove(list.size()-1);
         
-          if(i-j >= n/2+1) { // left back
-            diamond += " ";
-          } else if(i+j >= (n/2)*3+1) { // right back
-            break;
-          }else {
-            diamond += "*";
-          }
-          
+        switch(arr[i]) {
+          case "+": list.add(num2 + num1); break;
+          case "-": list.add(num2 - num1); break;
+          case "*": list.add(num2 * num1); break;
+          case "/": list.add(num2 / num1); break;
         }
-        
-      } // end for j
-        diamond += "\n";
-    } // end for i
-    System.out.println(diamond);
-    return diamond;
-	} // end method
-} // end class
+      } else {
+        list.add(Double.parseDouble(arr[i]));
+      }
+    }
+    
+    return list.get(list.size()-1);
+  }
+}
 {% endhighlight %}
 
 ## Sample Tests
 {% highlight javascript %}
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
-public class DiamondTest {
-    @Test
-    public void testDiamond3() {
-      StringBuffer expected = new StringBuffer();
-      expected.append(" *\n");
-      expected.append("***\n");
-      expected.append(" *\n");
-      
-      assertEquals(expected.toString(), Diamond.print(3));
-    }
-    
-    @Test
-    public void testDiamond5() {
-      StringBuffer expected = new StringBuffer();
-      expected.append("  *\n");
-      expected.append(" ***\n");
-      expected.append("*****\n");
-      expected.append(" ***\n");
-      expected.append("  *\n");
-      
-      assertEquals(expected.toString(), Diamond.print(5));
-    }    
+public class CalcTest {
+
+  private Calc calc = new Calc();
+
+  @Test
+  public void shouldWorkWithEmptyString() {
+      assertEquals("Should work with empty string", 0, calc.evaluate(""), 0);
+  }
+  
+  @Test
+  public void shouldParseNumbers() {
+      assertEquals("Should parse numbers", 3, calc.evaluate("3"), 0);
+  }
+
+  @Test
+  public void shouldParseFloatNumbers() {
+      assertEquals("Should parse float numbers", 3.5, calc.evaluate("3.5"), 0);
+  }
+
+  @Test
+  public void shouldSupportAddition() {
+      assertEquals("Should support addition", 4, calc.evaluate("1 3 +"), 0);
+  }
+
+  @Test
+  public void shouldSupportMultiplication() {
+      assertEquals("Should support multiplication", 3, calc.evaluate("1 3 *"), 0);
+  }
+
+  @Test
+  public void shouldSupportSubstraction() {
+      assertEquals("Should support substraction", -2, calc.evaluate("1 3 -"), 0);
+  }
+
+  @Test
+  public void shouldSupportDivision() {
+      assertEquals("Should support division", 2, calc.evaluate("4 2 /"), 0);
+  }
 }
 {% endhighlight %}
 
 ## Other Solution
 {% highlight javascript %}
-class Diamond {
-  public static String print(int n) {
-    if (n % 2 == 0 || n < 0) {
-      return null;
+import java.util.Stack;
+
+public class Calc {
+
+  public double evaluate(String expr) {
+    if (expr.equals("")) {
+      return 0;
     }
-    StringBuilder diamond = new StringBuilder();
-    for (int i = 1; i <= n; i+=2) {
-      appendLine(diamond, i, n);
-    }
-    for (int i = n-2; i > 0; i-=2) {
-      appendLine(diamond, i, n);
-    }
-    return diamond.toString();
-  }
   
-  private static void appendLine(StringBuilder diamond, int size, int totalSize) {
-    int spaces = (totalSize-size)/2;
-    for (int j = 0; j < spaces; j++) {
-      diamond.append(" ");
+    Stack<Double> stack = new Stack<Double>();
+    String[] atoms = expr.split(" ");
+    
+    for (String atom: atoms) {
+      Double a, b;
+      switch (atom) {
+        case "+": stack.push(stack.pop() + stack.pop()); break;
+        case "-": b = stack.pop(); a = stack.pop(); stack.push(a - b); break;
+        case "*": stack.push(stack.pop() * stack.pop()); break;
+        case "/": b = stack.pop(); a = stack.pop(); stack.push(a / b); break;
+        default:
+          stack.push(Double.parseDouble(atom));
+      }
     }
-    for (int j = 0; j < size; j++) {
-      diamond.append("*");
-    }
-    diamond.append("\n");
+    
+    return stack.pop();
   }
 }
 
-class Diamond {
-    public static String print(int n) {
-        if (n < 0 || n % 2 == 0) return null;
-        String shape = "";
-        int midRow = n/2 + 1;
-        for (int i = midRow; i <= n*2 - midRow; i++) {
-            for (int j = 1; j <= n - Math.abs(n - i); j++) {
-                if (j <= Math.abs(n - i))
-                    shape += " ";
-                else 
-                    shape += "*";
-            }
-            shape += "\n";
-        }
-        return shape;
+import java.util.ArrayDeque;
+import java.util.Collections;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.DoubleBinaryOperator;
+
+public class Calc {
+  private static final String DELIMITER = " ";
+  private static final String OPERATOR_PLUS = "+";
+  private static final String OPERATOR_MINUS = "-";
+  private static final String OPERATOR_MULTIPLY = "*";
+  private static final String OPERATOR_DIVIDE = "/";
+  
+  private static final Map<String, DoubleBinaryOperator> OPERATORS;
+  
+  static {
+    final Map<String, DoubleBinaryOperator> operators = new HashMap<>(4, 1);
+    operators.put(OPERATOR_PLUS, (summand2, summand1) -> summand1 + summand2);
+    operators.put(OPERATOR_MINUS, (subtrahend, minuend) -> minuend - subtrahend);
+    operators.put(OPERATOR_MULTIPLY, (factor2, factor1) -> factor1 * factor2);
+    operators.put(OPERATOR_DIVIDE, (divisor, dividend) -> dividend / divisor);
+    OPERATORS = Collections.unmodifiableMap(operators);
+  }
+
+  public double evaluate(final String expr) {
+    if (expr.isEmpty()) {
+      return 0;
     }
+    
+    final String[] parts = expr.split(DELIMITER);
+    final Deque<Double> operands = new ArrayDeque<>(parts.length / 2 + 1);
+    for (final String part : parts) {
+      final DoubleBinaryOperator operator = OPERATORS.get(part);
+      operands.push(operator == null ? Double.parseDouble(part) : operator.applyAsDouble(operands.pop(), operands.pop()));
+    }
+    return operands.peek();
+  }
 }
 
-class Diamond {
+import java.util.Stack;
 
-    static String row(int n, int i) {
-        String s = "";
-        for (int j = 0; j < (n - i) / 2; ++j) {
-            s += " ";
+public class Calc {
+
+  public double evaluate(String expr) {
+    if (expr.isEmpty())
+        return 0.0;
+    Stack<Double> operands = new Stack<Double>();
+    for (String token : expr.split(" ")) {
+        switch (token) {
+            case "+":
+                operands.push(operands.pop() + operands.pop());
+                break;
+            case "-":
+                operands.push(-operands.pop() + operands.pop());
+                break;
+            case "*":
+                operands.push(operands.pop() * operands.pop());
+                break;
+            case "/":
+                operands.push(1.0 / operands.pop() * operands.pop());
+                break;
+            default:
+                operands.push(Double.parseDouble(token));
         }
-        for (int j = 0; j < i; ++j) {
-            s += "*";
-        }
-        return s + "\n";
     }
-
-    public static String print(int n) {
-        if (n < 1 || n % 2 == 0) {
-            return null;
-        }
-        String s = row(n, n);
-        for (int i = n - 2; i >= 1; i -= 2) {
-            String r = row(n, i);
-            s = r + s + r;
-        }
-        return s;
-    }
-
+    return operands.pop();
+  }
 }
 {% endhighlight %}
 
 ## 느낀점
-다이아몬드 별을 찍는 예제로 요구사항은 금방 이해되지만 오랜만에 알고리즘 문제에 애를 먹었다.<br/>
-결국 구글링을 통해 예제를 한번 확인하고 풀 수 있었다.<br/>
-이제는 알고리즘 공부도 필요한 것 같다.
+후위표기법으로 계산하는 로직을 작성하는 문제였다.<br/>
+구글링을 하니 stack을 이용해서 문제를 풀었지만 list를 통해 문제를 풀 수 있었다.<br/>
+다른 개발자들이 한 것을 보니 stack을 많이 이용해서 코드가 간략해졌다.<br/>
+또한 쓸데없는 if문이 없는 것으로 보아 아직 공부가 필요한 것 같다.
