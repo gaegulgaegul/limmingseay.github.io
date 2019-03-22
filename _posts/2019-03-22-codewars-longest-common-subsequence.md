@@ -20,9 +20,11 @@ categories:
 Write a function called LCS that accepts two sequences and returns the longest subsequence common to the passed in sequences.<br/>
 
 <b>Subsequence</b>
+
 A subsequence is different from a substring. The terms of a subsequence need not be consecutive terms of the original sequence.<br/>
 
 <b>Example subsequence</b>
+
 Subsequences of "abc" = "a", "b", "c", "ab", "ac", "bc" and "abc".<br/>
 
 <b>LCS examples</b>
@@ -33,6 +35,7 @@ Solution.lcs("132535365", "123456789") => returns "12356"
 {% endhighlight %}
 
 <b>Notes</b>
+
 Both arguments will be strings
 Return value must be a string
 Return an empty string if there exists no common subsequence
@@ -43,6 +46,7 @@ Note that the Haskell variant will use randomized testing, but any longest commo
 Note that the OCaml variant is using generic lists instead of strings, and will also have randomized tests (any longest common subsequence will be valid).<br/>
 
 <b>Tips</b>
+
 Wikipedia has an explanation of the two properties that can be used to solve the problem:<br/>
 
 - First property
