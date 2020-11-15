@@ -1,70 +1,58 @@
-# Site settings
-title: Web Developer
-description: "I am junior programmer."
-url: "https://linmingseay.github.io"
-baseurl: ""
-
-# User settings
-username: LinMingSeay's Develop log
-user_title: 그냥 한번 해보는 Github Blog
+title: 개굴개굴 블로그
+author: 임명섭
 email: dla9721@gmail.com
-twitter_username: 
-github_username: linmingseay
-facebook_username: 100006466843580
-linkedin_public_url: 
-disqus_username: 
-profile_picture: https://avatars2.githubusercontent.com/u/43808137?s=460&v=4
+description: > # this means to ignore newlines until "show_exerpts:"
+  공부하면서 기
+show_excerpts: true # set to true to show excerpts on the homepage
+
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+sass:
+  sass_dir: _sass
+plainwhite:
+  name: Adam Denisov
+  tagline: Developer. Designer록
+  date_format: "%b %-d, %Y"
+  sitemap: true # set to true to generate sitemap.xml content
+  search: true # set to true to enable searchbar
+  dark_mode: true # set to true to add dark mode toggle
+  portfolio_image: "assets/portfolio.png" # the path from the base directory of the site to the image to display (no / at the start)
+  html_lang: "en" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
+  condensed_mobile:
+    #- home
+    - page
+    - post
+  # generate social links in footer
+  social_links:
+    twitter: samarsault
+    github:  samarsault
+    linkedIn: in/samarsault
+    #rss: rss
+    #dribbble: jekyll
+    #flickr:   jekyll
+    #instagram: jekyll
+    #pinterest: jekyll
+    #youtube: jekyll
+    #facebook: jekyll
+    #soundcloud: jekyll
+    #telegram: jekyll
+    #gitlab: jekyll
+
+    # Mastodon instances
+    # mastodon:
+    # - username: jekyll
+    #   instance: example.com
+    # - username: jekyll2
+    #   instance: example.com
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
 
 # Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: /:title/
+theme: plainwhite
 
-# html minify
-compress_html:
-  clippings: all
-  comments: all
-  endings: []
-  profile: false
-
-# Links to include in menu navigation
-links:
-  section_1:
-    - title: 홈
-      url: /
-      key_trigger: 1
-    - title: 전체 포스트
-      url: /posts
-      key_trigger: 2
-    - title: 시리즈
-      url: /series
-      key_trigger: 3
-    - title: 태그
-      url: /tags
-      key_trigger: 4
-    - title: About
-      url: /about
-      key_trigger: 5
-  section_2:
-    - title: GitHub
-      url: http://www.github.com/linmingseay
-      new_tab: true
-      key_trigger: g
-    - title: FACEBOOK
-      url: http://www.facebook.com/profile.php?id=100006466843580
-      key_trigger: f
-    - title: 검색
-      url: ""
-      key_trigger: s #WARNING: search only works with "s"
-
-# projects in header index
-projects:
-  - name: 
-    url: 
-  - name: 
-    url: 
-  - name: 
-    url:  
-
-# exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+plugins:
+  - jekyll-seo-tag
+#  - jekyll-feed
